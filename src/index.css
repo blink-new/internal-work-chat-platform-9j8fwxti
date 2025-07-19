@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 6% 95%;
+    --foreground: 40 6% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 40 6% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 40 6% 14%;
+    --primary: 245 13% 37%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 245 25% 52%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 40 6% 95%;
+    --muted-foreground: 0 0% 38%;
+    --accent: 245 25% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 6% 88%;
+    --input: 0 0% 100%;
+    --ring: 245 25% 52%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 40 6% 14%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 20%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 245 25% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 245 13% 37%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 63%;
+    --accent: 245 25% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 27%;
+    --input: 0 0% 20%;
+    --ring: 245 25% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Teams-specific styles */
+.teams-sidebar {
+  background: hsl(var(--primary));
+}
+
+.teams-channel-list {
+  background: hsl(var(--muted));
+}
+
+.teams-chat-area {
+  background: hsl(var(--background));
+}
+
+.teams-message {
+  @apply hover:bg-muted/50 transition-colors;
+}
+
+.teams-message:hover .message-actions {
+  @apply opacity-100;
+}
+
+.message-actions {
+  @apply opacity-0 transition-opacity;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
